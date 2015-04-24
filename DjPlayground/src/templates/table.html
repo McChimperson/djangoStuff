@@ -1,0 +1,41 @@
+{% extends 'crawlTable.html'%}
+
+{%block table%}
+<h2>SEC forms summary</h2>
+<table id="myTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Acquired</th>
+                  <th>Codes</th>
+                  <th>Disposed</th>
+                  <th>Codes</th>
+                  <th>OptionsA</th>
+                  <th>Codes</th>
+                  <th>OptionsD</th>
+                  <th>Codes</th>
+                  <th>DateTime</th>
+                  <th>Company</th>
+                  <th>Insider</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for tableEntry in tableEntryList %}
+                <tr>
+                  <td>{{tableEntry.reporter.symbol}}</td>
+                  <td>{{tableEntry.t1TotalA}}</td>
+                  <td>{{tableEntry.t1codesA}}</td>
+                  <td>{{tableEntry.t1TotalD}}</td>
+                  <td>{{tableEntry.t1codesD}}</td>
+                  <td>{{tableEntry.t2TotalA}}</td>
+                  <td>{{tableEntry.t2codesA}}</td>
+                  <td>{{tableEntry.t2TotalD}}</td>
+                  <td>{{tableEntry.t2codesD}}</td>
+                  <td>{{tableEntry.reporter.timestamp}}</td>
+                  <td>{{tableEntry.reporter.title}}</td>
+                  <td>{{tableEntry.reporter.officername}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+{%endblock%}
