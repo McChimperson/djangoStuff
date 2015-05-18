@@ -1,0 +1,28 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	deleted:    DjPlayground/src/templates/base_old.html
+#	deleted:    DjPlayground/src/templates/crawlTable_old.html
+#
+# Changes not staged for commit:
+#	modified:   DjPlayground/src/DjPlayground/__pycache__/urls.cpython-34.pyc
+#	modified:   DjPlayground/src/DjPlayground/urls.py
+#	modified:   DjPlayground/src/db.sqlite3
+#	modified:   DjPlayground/src/signups/__pycache__/views.cpython-34.pyc
+#	modified:   DjPlayground/src/signups/views.py
+#	modified:   DjPlayground/src/templates/base.html
+#	modified:   DjPlayground/src/templates/crawlTable.html
+#	modified:   DjPlayground/src/templates/signup.html
+#
+# Untracked files:
+#	DjPlayground/src/templates/invalid.html
+#	DjPlayground/src/templates/loggedin.html
+#	DjPlayground/src/templates/login.html
+#	DjPlayground/src/templates/logout.html
+#	DjPlayground/src/templates/navbar.html
+#
+

@@ -11,9 +11,17 @@ urlpatterns = patterns('',
     url(r'^$'           , 'signups.views.home', name='home'),
     url(r'^polls/'      , include('polls.urls', namespace="polls")),
     url(r'^thank-you/'  , 'signups.views.thankyou', name='thankyou'),
-    url(r'^contact/'   , 'signups.views.contact', name='contact'),
+    url(r'^contact/'    , 'signups.views.contact', name='contact'),
     url(r'^admin/'      , include(admin.site.urls)),
     url(r'^retrieve?'   , grabByDate),
+    
+    url(r'^login/$'      , 'signups.views.login', name='login'),
+    url(r'^auth/$'       , 'signups.views.auth_view', name='auth'),
+    url(r'^logout/$'     , 'signups.views.logout', name='logout'),
+    url(r'^loggedin/$'   , 'signups.views.loggedin', name='loggedin'),
+    url(r'^invalid/$'    , 'signups.views.invalid_login', name='invalid'),
+    url(r'^register/$'   , 'signups.views.invalid_login', name='register'),
+    url(r'^register_success/$'    , 'signups.views.invalid_login', name='register_success'),
 )
 
 if(settings.DEBUG):
