@@ -46,9 +46,11 @@ def auth_view(request):
     
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/loggedin/')
+        messages.success(request, 'Successful Login!')
+        return HttpResponseRedirect('/')
     else:
-        return HttpResponseRedirect('/invalid/')
+        messages.info(request, 'Invalid Username or Password!')
+        return HttpResponseRedirect('/')
     
 def loggedin(request):
     return render(request, 'loggedin.html', {'full_name' : request.user.username})
@@ -58,4 +60,6 @@ def invalid_login(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'logout.html', {'full_name' : request.user.username})
+    messages.warning(request, 'You have successfully logged out!')
+    return HttpResponseRedirect('/')
+    #return render(request, 'logout.html', {'full_name' : request.user.username})

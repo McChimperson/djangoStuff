@@ -1,10 +1,15 @@
 {% extends 'base.html'%}
 
+
 {% block jumbotron %}
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
+      {% if user.is_authenticated %}
+        <h1>Hello, {{user.username}}!</h1>
+      {% else %}
         <h1>Hello!</h1>
+      {% endif %}
         <p>I'm Lucas, a recent computer science graduate from PSU. This website was built with Django web framework using html templates from Twitter Bootstrap. The database is SQLite3.</p>
         <p><a class="btn btn-primary btn-lg" href="contact" role="button">Contact &raquo;</a></p>
       </div>
