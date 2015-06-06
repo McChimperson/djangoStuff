@@ -18,6 +18,24 @@ def grabAll(request):
     #combinedList = list(chain(all_reporters, all_transations))
     return HttpResponse(test_list)
 
+
+def getLast50(request):
+    est = pytz.timezone('EST')
+    nowEast = datetime.now()
+    nowEast = timezone.make_aware(nowEast, est)
+    last_50_reporters = Reporters.objects.filter(timestamp__lt = nowEast)   
+    
+    tableEntryList = []
+    for r in last_50_reporters:
+        tQuerySet = getTransactions(r, last_50_reporters)
+        tblEntry = TableEntry(r, tQuerySet)
+        tableEntryList.append(tblEntry)
+        
+    context_instance = {'tableEntryList':tableEntryList}
+    
+    return render(request, "table.html", context_instance)
+
+
 def grabByDate(request):
     est = pytz.timezone('EST')
     
@@ -70,7 +88,6 @@ def grabByDate(request):
     for r in reporterQuerySet:
         tQuerySet = getTransactions(r, transactionQuerySet)
         tblEntry = TableEntry(r, tQuerySet)
-        #blEntry = tblEntry.generateSummary()
         tableEntryList.append(tblEntry)
         
     context_instance = {'tableEntryList':tableEntryList}

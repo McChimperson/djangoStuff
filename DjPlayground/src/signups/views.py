@@ -20,15 +20,10 @@ def home(request):
         from_email  = settings.EMAIL_HOST_USER
         to_list     = [form_data.email, settings.EMAIL_HOST_USER]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
-        messages.success(request, 'Django messaging system!')
-        return HttpResponseRedirect('/thank-you/')
+        messages.success(request, 'Email successfully sent!')
+        return HttpResponseRedirect('/')
         
     return render(request, "signup.html", locals())
-    
-    
-def thankyou(request):
-    
-    return render(request, "thankyou.html", locals())
     
 def contact(request):
     
@@ -51,12 +46,6 @@ def auth_view(request):
     else:
         messages.info(request, 'Invalid Username or Password!')
         return HttpResponseRedirect('/')
-    
-def loggedin(request):
-    return render(request, 'loggedin.html', {'full_name' : request.user.username})
-
-def invalid_login(request):
-    return render(request, 'invalid.html', locals())
 
 def logout(request):
     auth.logout(request)

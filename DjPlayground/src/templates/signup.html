@@ -18,13 +18,44 @@
 
 
 {%block content%}
+<div class="container">
   <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-8">
      <h2>Web Crawling</h2>
      <p>Sample output from a web crawler built with Python and BeautifulSoup to scan SEC information, integrated into database as an unmanaged model.</p>
-     <p><a class="btn btn-default" href="retrieve" role="button">View details &raquo;</a></p>
    </div>
-       
+   
+   <div class="col-md-4">
+   	 <br>
+   	 <br>
+   	 <br>
+     <p><a class="btn btn-default" href="retrieve">View details &raquo;</a></p>
+   </div>
+  </div>     
+  
+        <hr>
+  
+  <div class="row">     
+   <div class="col-md-7">
+
+	<h2>Email Sender</h2>
+	<p>Sends and email to given address with name</p>
+   </div>
+   
+   <div class="col-md-4">
+   	 <br>
+   	 <br>
+	 <form method="POST" action=''> {% csrf_token %}
+		{{form.as_p}}
+	 </form>
+	 <input type='submit' class="btn btn-info">
+   </div>
+   
+  </div>
+  
+        <hr>
+  
+  <div class="row">
    <div class="col-md-4">
     <h2>PayPal doodad</h2>
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -42,33 +73,15 @@
 		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 	</form>
 
-  </div>
-       
-   <div class="col-md-4">
-
-	<h2>Email Sender</h2>
-	<p>Sends and email to given address with name</p>
-	<form method="POST" action=''> {% csrf_token %}
-		{{form.as_p}}
-		<input type='submit'>
-	</form>
    </div>
   </div>
-       
-     
+  
+        <hr>
+  
   <div class="row">
-      
-  <div class="col-md-4">
-    <h2>Picture Gallery</h2>
-    <p>I'll figure out something to put here.</p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+   <div class="col-md-4">
+    <h2>Polls example</h2>
+   </div>
   </div>
-     
-  <div class="col-md-4">
-    <h2>Videos</h2>
-    <p>I'll figure out something to put here.</p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
-     
 </div>
 {%endblock%}
