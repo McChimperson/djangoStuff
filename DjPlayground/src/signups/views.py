@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 
 from django.core.context_processors import csrf
 from django.contrib import auth
+from .forms import UserRegistrationForm
 
 # Create your views here.
 def home(request):
@@ -51,4 +52,20 @@ def logout(request):
     auth.logout(request)
     messages.warning(request, 'You have successfully logged out!')
     return HttpResponseRedirect('/')
-    #return render(request, 'logout.html', {'full_name' : request.user.username})
+
+def user_registration(request):
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registration Successful!')
+            return HttpResponseRedirect('/')
+        else:
+            messages.error(request, 'Form not valid!')
+    
+    args = {}
+    args.update(csrf(request))
+    
+    args['form'] = UserRegistrationForm()
+    return render(request, 'register.html', args)
+

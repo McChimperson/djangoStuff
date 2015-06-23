@@ -17,10 +17,10 @@ urlpatterns = patterns('',
     url(r'^login/$'     , 'signups.views.login', name='login'),
     url(r'^auth/$'      , 'signups.views.auth_view', name='auth'),
     url(r'^logout/$'    , 'signups.views.logout', name='logout'),
+    url(r'^register/$'  , 'signups.views.user_registration', name='register'),
     #url(r'^thank-you/'  , 'signups.views.thankyou', name='thankyou'),
     #url(r'^loggedin/$'  , 'signups.views.loggedin', name='loggedin'),
     #url(r'^invalid/$'             , 'signups.views.invalid_login', name='invalid'),
-    #url(r'^register/$'            , 'signups.views.invalid_login', name='register'),
     #url(r'^register_success/$'    , 'signups.views.invalid_login', name='register_success'),
 )
 
