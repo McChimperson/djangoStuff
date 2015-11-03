@@ -6,9 +6,24 @@
 }
 
 .navbar-inverse{
-	background-color: rgb(17,7,18)
+	background-color: rgb(17,7,18);
 }
 
-.body{
-	background-color: #d3d3d3
+.navbar-inverse .navbar-brand {
+    color: #C7A732;
+}
+
+#footer-color{
+	color: #C7A732;
+}
+
+#bg-container{
+	background-color: #110712
+}
+
+
+#rcorners1 {
+    border-radius: 25px;
+    background: #C7A732;
+    padding: 20px; 
 }

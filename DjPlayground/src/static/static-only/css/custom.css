@@ -2,8 +2,22 @@
 	position: relative;
 	background: url("../media/backgrounds/city0.png");
 	overflow: hidden;
+	color: white;
 }
 
-h1 {
-    color: #00ff00;
+.navbar-inverse{
+	background-color: rgb(17,7,18)
+}
+
+.body{
+	background-color: #d3d3d3
+}
+
+
+.rcorners1 {
+    border-radius: 25px;
+    background: #8AC007;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
 }
